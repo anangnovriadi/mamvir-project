@@ -16,13 +16,28 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar'
+import { cn } from '@/lib/utils'
 
 type TeamSwitcherProps = {
   teams: {
     name: string
-    logo: IconSvgElement
-    plan: string
+    logo: IconSvgElement | string
+    plan?: string
   }[]
+}
+
+function TeamLogo({
+  logo,
+  className,
+}: {
+  logo: IconSvgElement | string
+  className?: string
+}) {
+  return typeof logo === 'string' ? (
+    <img src={logo} alt='' className={cn('object-contain', className)} />
+  ) : (
+    <HugeiconsIcon icon={logo} className={className} />
+  )
 }
 
 export function TeamSwitcher({ teams }: TeamSwitcherProps) {
@@ -38,14 +53,22 @@ export function TeamSwitcher({ teams }: TeamSwitcherProps) {
               size='lg'
               className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
             >
-              <div className='flex aspect-square size-8 items-center justify-center rounded-sm bg-sidebar-primary text-sidebar-primary-foreground'>
-                <HugeiconsIcon icon={activeTeam.logo} className='size-4' />
-              </div>
-              <div className='grid flex-1 text-start text-sm leading-tight'>
+              {typeof activeTeam.logo === 'string' ? (
+                <div className='flex aspect-square size-8 items-center justify-center'>
+                  <TeamLogo logo={activeTeam.logo} className='size-7' />
+                </div>
+              ) : (
+                <div className='flex aspect-square size-8 items-center justify-center rounded-sm bg-sidebar-primary text-sidebar-primary-foreground'>
+                  <TeamLogo logo={activeTeam.logo} className='size-4' />
+                </div>
+              )}
+              <div className='grid flex-1 text-start text-[15px] leading-tight'>
                 <span className='truncate font-semibold'>
                   {activeTeam.name}
                 </span>
-                <span className='truncate text-xs'>{activeTeam.plan}</span>
+                {activeTeam.plan && (
+                  <span className='truncate text-xs'>{activeTeam.plan}</span>
+                )}
               </div>
               <HugeiconsIcon icon={UnfoldMoreIcon} className='ms-auto' />
             </SidebarMenuButton>
@@ -66,7 +89,7 @@ export function TeamSwitcher({ teams }: TeamSwitcherProps) {
                 className='gap-2 p-2'
               >
                 <div className='flex size-6 items-center justify-center rounded-sm border'>
-                  <HugeiconsIcon icon={team.logo} className='size-4 shrink-0' />
+                  <TeamLogo logo={team.logo} className='size-4 shrink-0' />
                 </div>
                 {team.name}
                 <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>

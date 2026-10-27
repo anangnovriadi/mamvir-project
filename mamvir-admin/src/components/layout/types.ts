@@ -9,8 +9,9 @@ type User = {
 
 type Team = {
   name: string
-  logo: IconSvgElement
-  plan: string
+  // A Hugeicons icon, or an image URL (e.g. a brand logo in /public)
+  logo: IconSvgElement | string
+  plan?: string
 }
 
 type BaseNavItem = {

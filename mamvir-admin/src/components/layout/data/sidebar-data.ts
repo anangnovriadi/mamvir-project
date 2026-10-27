@@ -11,7 +11,6 @@ import {
   BubbleChatIcon,
   Bug01Icon,
   CheckListIcon,
-  CommandIcon,
   ComputerIcon,
   ConstructionIcon,
   DashboardSquare01Icon,
@@ -41,9 +40,8 @@ export const sidebarData: SidebarData = {
   },
   teams: [
     {
-      name: 'Mamvir',
-      logo: CommandIcon,
-      plan: 'Admin Dashboard',
+      name: 'Mamvir Dashboard',
+      logo: '/images/logo_mamvir_transparent.png',
     },
     {
       name: 'Acme Inc',

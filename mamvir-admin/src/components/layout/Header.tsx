@@ -26,7 +26,7 @@ export function Header({ className, children, ...props }: HeaderProps) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 h-16 border-b bg-background',
+        'sticky top-0 z-50 h-16 border-b bg-sidebar',
         offset > 10 ? 'shadow-xs' : 'shadow-none',
         className
       )}
