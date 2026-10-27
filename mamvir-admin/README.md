@@ -1,17 +1,17 @@
-# AdminCN - Free Tailwind CSS & Next.js Admin Dashboard Website Template
+# Shadcn Admin - Free Tailwind CSS & React Admin Dashboard Website Template
 
 #### Preview
 
- - [Demo](https://themewagon.github.io/admincn/)
+ - [Demo](https://themewagon.github.io/shadcn-admin/)
 
 #### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/admincn/)
+ - [Download from ThemeWagon](https://themewagon.com/themes/shadcn-admin/)
 
 ## Getting Started
 
 1. Clone Repository
 ```
-git clone https://github.com/themewagon/admincn.git
+git clone https://github.com/themewagon/shadcn-admin.git
 ```
 2. Install Dependencies
 ```
@@ -31,11 +31,11 @@ bun dev
 
 ## Author 
 ```
-Design and code is completely written by ShadcnStudio and development team. 
+Design and code is completely written by Sat Naing and development team. 
 ```
 
 ## License
 
- - Design and Code is Copyright &copy; <a href="https://shadcnstudio.com/" target="_blank">ShadcnStudio</a>
+ - Design and Code is Copyright &copy; <a href="https://github.com/satnaing" target="_blank">Sat Naing</a>
  - Licensed cover under [MIT]
  - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>

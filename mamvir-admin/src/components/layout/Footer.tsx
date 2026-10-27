@@ -1,50 +1,28 @@
-// Next Imports
-import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
-const Footer = () => {
+type FooterProps = React.ComponentProps<'footer'>
+
+export function Footer({ className, ...props }: FooterProps) {
   return (
-    <footer>
-      <div className='text-muted-foreground mx-auto flex size-full max-w-360 items-center justify-between gap-3 px-4 py-3 max-sm:flex-col sm:gap-6 sm:px-6'>
-        <p className='text-sm text-balance max-sm:text-center'>
-          {`©${new Date().getFullYear()}`}{' '}
-          <Link href='https://shadcnstudio.com' target='_blank' className='text-primary hover:underline'>
-            shadcn/studio
-          </Link>
-          , Made for better web design &bull; Distributed by <Link href="https://themewagon.com" target="_blank" className='text-primary hover:underline'>ThemeWagon</Link>
-        </p>
-        <div className='flex items-center gap-5 max-sm:hidden'>
-          <Link
-            href='https://shadcnstudio.com/license'
-            target='_blank'
-            className='text-muted-foreground hover:text-foreground text-sm transition duration-300'
-          >
-            License
-          </Link>
-          <Link
-            href='https://shadcnstudio.com/templates/admin-dashboard'
-            target='_blank'
-            className='text-muted-foreground hover:text-foreground text-sm transition duration-300'
-          >
-            More Dashboards
-          </Link>
-          <Link
-            href='https://shadcnstudio.com/docs/documentation-admin/getting-started'
-            target='_blank'
-            className='text-muted-foreground hover:text-foreground text-sm transition duration-300'
-          >
-            Documentation
-          </Link>
-          <Link
-            href='https://shadcnstudio.com/support'
-            target='_blank'
-            className='text-muted-foreground hover:text-foreground text-sm transition duration-300'
-          >
-            Support
-          </Link>
-        </div>
-      </div>
+    <footer
+      className={cn(
+        'text-muted-foreground mt-auto shrink-0 border-t px-4 py-4 text-center text-sm',
+        className
+      )}
+      {...props}
+    >
+      <span>&copy; {new Date().getFullYear()} All rights reserved by <a href="https://github.com/satnaing" target="_blank" rel="noreferrer" className="text-foreground font-medium underline-offset-4 hover:underline">Sat Naing</a> </span>
+      <span>
+         &bull; Distributed by{' '}
+        <a
+          href='https://themewagon.com/'
+          target='_blank'
+          rel='noreferrer'
+          className='text-foreground font-medium underline-offset-4 hover:underline'
+        >
+          ThemeWagon
+        </a>
+      </span>
     </footer>
   )
 }
-
-export default Footer
